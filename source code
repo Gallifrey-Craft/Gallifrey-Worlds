@@ -16,9 +16,9 @@
  *  net.minecraftforge.eventbus.api.SubscribeEvent
  *  net.minecraftforge.fml.client.registry.RenderingRegistry
  */
-package net.gallifreyworlds.entity.renderer;
+package net.mcreator.gallifreyworlds.entity.renderer;
 
-import net..gallifreyworlds.entity.JawaEntity;
+import net.mcreator.gallifreyworlds.entity.JawaEntity;
 import net.minecraft.client.renderer.entity.BipedRenderer;
 import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.BipedArmorLayer;
@@ -520,6 +520,101 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @GallifreyWorldsModElements.ModElement.Tag
+public class TheSunDimension
+extends GallifreyWorldsModElements.ModElement {
+    public TheSunDimension(GallifreyWorldsModElements instance) {
+        super(instance, 23);
+    }
+
+    @Override
+    public void init(FMLCommonSetupEvent event) {
+        HashSet<Block> replaceableBlocks = new HashSet<Block>();
+        replaceableBlocks.add(Blocks.field_150359_w);
+        replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:star"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204108_a().func_177230_c());
+        replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:star"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204109_b().func_177230_c());
+        DeferredWorkQueue.runLater(() -> {
+            try {
+                ObfuscationReflectionHelper.setPrivateValue(WorldCarver.class, (Object)WorldCarver.field_222709_a, (Object)new ImmutableSet.Builder().addAll((Iterable)((Set)ObfuscationReflectionHelper.getPrivateValue(WorldCarver.class, (Object)WorldCarver.field_222709_a, (String)"field_222718_j"))).addAll((Iterable)replaceableBlocks).build(), (String)"field_222718_j");
+                ObfuscationReflectionHelper.setPrivateValue(WorldCarver.class, (Object)WorldCarver.field_222711_c, (Object)new ImmutableSet.Builder().addAll((Iterable)((Set)ObfuscationReflectionHelper.getPrivateValue(WorldCarver.class, (Object)WorldCarver.field_222711_c, (String)"field_222718_j"))).addAll((Iterable)replaceableBlocks).build(), (String)"field_222718_j");
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Override
+    @OnlyIn(value=Dist.CLIENT)
+    public void clientLoad(FMLClientSetupEvent event) {
+        DimensionRenderInfo customEffect = new DimensionRenderInfo(Float.NaN, true, DimensionRenderInfo.FogType.NONE, false, false){
+
+            public Vector3d func_230494_a_(Vector3d color, float sunHeight) {
+                return color;
+            }
+
+            public boolean func_230493_a_(int x, int y) {
+                return false;
+            }
+        };
+        DeferredWorkQueue.runLater(() -> {
+            try {
+                Object2ObjectMap effectsRegistry = (Object2ObjectMap)ObfuscationReflectionHelper.getPrivateValue(DimensionRenderInfo.class, null, (String)"field_239208_a_");
+                effectsRegistry.put((Object)new ResourceLocation("gallifrey_worlds:the_sun"), (Object)customEffect);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+}
+
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  com.google.common.collect.ImmutableSet$Builder
+ *  it.unimi.dsi.fastutil.objects.Object2ObjectMap
+ *  net.minecraft.block.Block
+ *  net.minecraft.block.Blocks
+ *  net.minecraft.client.world.DimensionRenderInfo
+ *  net.minecraft.client.world.DimensionRenderInfo$FogType
+ *  net.minecraft.util.ResourceLocation
+ *  net.minecraft.util.math.vector.Vector3d
+ *  net.minecraft.world.biome.Biome
+ *  net.minecraft.world.gen.carver.WorldCarver
+ *  net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder
+ *  net.minecraftforge.api.distmarker.Dist
+ *  net.minecraftforge.api.distmarker.OnlyIn
+ *  net.minecraftforge.fml.DeferredWorkQueue
+ *  net.minecraftforge.fml.common.ObfuscationReflectionHelper
+ *  net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
+ *  net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
+ *  net.minecraftforge.registries.ForgeRegistries
+ */
+package net.mcreator.gallifreyworlds.world.dimension;
+
+import com.google.common.collect.ImmutableSet;
+import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
+import java.util.HashSet;
+import java.util.Set;
+import net.mcreator.gallifreyworlds.GallifreyWorldsModElements;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.client.world.DimensionRenderInfo;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.carver.WorldCarver;
+import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.fml.DeferredWorkQueue;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+
+@GallifreyWorldsModElements.ModElement.Tag
 public class WorldTatooineDimension
 extends GallifreyWorldsModElements.ModElement {
     public WorldTatooineDimension(GallifreyWorldsModElements instance) {
@@ -859,6 +954,74 @@ extends GallifreyWorldsModElements.ModElement {
                 mobSpawnInfo.func_242575_a(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.field_200725_aD, 20, 4, 4));
                 biome = new Biome.Builder().func_205415_a(Biome.RainType.RAIN).func_205419_a(Biome.Category.NONE).func_205421_a(0.1f).func_205420_b(0.2f).func_205414_c(0.5f).func_205417_d(0.5f).func_235097_a_(effects).func_242458_a(mobSpawnInfo.func_242577_b()).func_242457_a(biomeGenerationSettings.func_242508_a()).func_242455_a();
                 event.getRegistry().register(biome.setRegistryName("gallifrey_worlds:lothalmain"));
+            }
+        }
+    }
+}
+
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  net.minecraft.block.Blocks
+ *  net.minecraft.world.biome.Biome
+ *  net.minecraft.world.biome.Biome$Builder
+ *  net.minecraft.world.biome.Biome$Category
+ *  net.minecraft.world.biome.Biome$RainType
+ *  net.minecraft.world.biome.BiomeAmbience
+ *  net.minecraft.world.biome.BiomeAmbience$Builder
+ *  net.minecraft.world.biome.BiomeGenerationSettings$Builder
+ *  net.minecraft.world.biome.MobSpawnInfo$Builder
+ *  net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig
+ *  net.minecraft.world.gen.surfacebuilders.SurfaceBuilder
+ *  net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig
+ *  net.minecraftforge.event.RegistryEvent$Register
+ *  net.minecraftforge.eventbus.api.SubscribeEvent
+ *  net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
+ *  net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
+ */
+package net.mcreator.gallifreyworlds.world.biome;
+
+import net.mcreator.gallifreyworlds.GallifreyWorldsModElements;
+import net.minecraft.block.Blocks;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeAmbience;
+import net.minecraft.world.biome.BiomeGenerationSettings;
+import net.minecraft.world.biome.MobSpawnInfo;
+import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+@GallifreyWorldsModElements.ModElement.Tag
+public class StarBiome
+extends GallifreyWorldsModElements.ModElement {
+    public static Biome biome;
+
+    public StarBiome(GallifreyWorldsModElements instance) {
+        super(instance, 22);
+        FMLJavaModLoadingContext.get().getModEventBus().register((Object)new BiomeRegisterHandler());
+    }
+
+    @Override
+    public void init(FMLCommonSetupEvent event) {
+    }
+
+    private static class BiomeRegisterHandler {
+        private BiomeRegisterHandler() {
+        }
+
+        @SubscribeEvent
+        public void registerBiomes(RegistryEvent.Register<Biome> event) {
+            if (biome == null) {
+                BiomeAmbience effects = new BiomeAmbience.Builder().func_235239_a_(-16777216).func_235246_b_(4159204).func_235248_c_(329011).func_242539_d(-16777216).func_242540_e(10387789).func_242541_f(-16777216).func_235238_a_();
+                BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder().func_242517_a(SurfaceBuilder.field_215396_G.func_242929_a((ISurfaceBuilderConfig)new SurfaceBuilderConfig(Blocks.field_150359_w.func_176223_P(), Blocks.field_150353_l.func_176223_P(), Blocks.field_150353_l.func_176223_P())));
+                MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().func_242571_a();
+                biome = new Biome.Builder().func_205415_a(Biome.RainType.RAIN).func_205419_a(Biome.Category.NONE).func_205421_a(0.1f).func_205420_b(0.2f).func_205414_c(0.5f).func_205417_d(0.5f).func_235097_a_(effects).func_242458_a(mobSpawnInfo.func_242577_b()).func_242457_a(biomeGenerationSettings.func_242508_a()).func_242455_a();
+                event.getRegistry().register(biome.setRegistryName("gallifrey_worlds:star"));
             }
         }
     }
