@@ -16,9 +16,9 @@
  *  net.minecraftforge.eventbus.api.SubscribeEvent
  *  net.minecraftforge.fml.client.registry.RenderingRegistry
  */
-package net.mcreator.gallifreyworlds.entity.renderer;
+package net.gallifreyworlds.entity.renderer;
 
-import net.mcreator.gallifreyworlds.entity.JawaEntity;
+import net..gallifreyworlds.entity.JawaEntity;
 import net.minecraft.client.renderer.entity.BipedRenderer;
 import net.minecraft.client.renderer.entity.IEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.BipedArmorLayer;
@@ -338,8 +338,6 @@ extends GallifreyWorldsModElements.ModElement {
     public void init(FMLCommonSetupEvent event) {
         HashSet<Block> replaceableBlocks = new HashSet<Block>();
         replaceableBlocks.add(Blocks.field_196658_i);
-        replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:lothalhills"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204108_a().func_177230_c());
-        replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:lothalhills"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204109_b().func_177230_c());
         replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:lothalmain"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204108_a().func_177230_c());
         replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:lothalmain"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204109_b().func_177230_c());
         DeferredWorkQueue.runLater(() -> {
@@ -437,8 +435,6 @@ extends GallifreyWorldsModElements.ModElement {
         replaceableBlocks.add(Blocks.field_196604_cC);
         replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("snowy_mountains"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204108_a().func_177230_c());
         replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("snowy_mountains"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204109_b().func_177230_c());
-        replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("snowy_taiga"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204108_a().func_177230_c());
-        replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("snowy_taiga"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204109_b().func_177230_c());
         replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:hothmain"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204108_a().func_177230_c());
         replaceableBlocks.add(((ConfiguredSurfaceBuilder)((Biome)ForgeRegistries.BIOMES.getValue(new ResourceLocation("gallifrey_worlds:hothmain"))).func_242440_e().func_242500_d().get()).func_215452_a().func_204109_b().func_177230_c());
         DeferredWorkQueue.runLater(() -> {
@@ -853,10 +849,12 @@ extends GallifreyWorldsModElements.ModElement {
                 BiomeAmbience effects = new BiomeAmbience.Builder().func_235239_a_(-26215).func_235246_b_(-10053121).func_235248_c_(-10066177).func_242539_d(-26215).func_242540_e(-3381760).func_242541_f(-3368704).func_235238_a_();
                 BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder().func_242517_a(SurfaceBuilder.field_215396_G.func_242929_a((ISurfaceBuilderConfig)new SurfaceBuilderConfig(Blocks.field_196658_i.func_176223_P(), Blocks.field_150348_b.func_176223_P(), Blocks.field_150348_b.func_176223_P())));
                 biomeGenerationSettings.func_242516_a(StructureFeatures.field_244135_a);
+                biomeGenerationSettings.func_242516_a(StructureFeatures.field_244154_t);
                 biomeGenerationSettings.func_242513_a(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_227248_z_.func_225566_b_((IFeatureConfig)Features.Configs.field_243977_a).func_227228_a_(Features.Placements.field_244002_m).func_227228_a_(Placement.field_242900_d.func_227446_a_((IPlacementConfig)new NoiseDependant(-0.8, 5, 4))));
                 biomeGenerationSettings.func_242513_a(GenerationStage.Decoration.VEGETAL_DECORATION, (ConfiguredFeature)Feature.field_227247_y_.func_225566_b_((IFeatureConfig)Features.Configs.field_243980_d).func_227228_a_(Features.Placements.field_244000_k).func_227228_a_(Features.Placements.field_244001_l).func_242731_b(4));
                 DefaultBiomeFeatures.func_243738_d((BiomeGenerationSettings.Builder)biomeGenerationSettings);
                 DefaultBiomeFeatures.func_243750_j((BiomeGenerationSettings.Builder)biomeGenerationSettings);
+                DefaultBiomeFeatures.func_243696_J((BiomeGenerationSettings.Builder)biomeGenerationSettings);
                 MobSpawnInfo.Builder mobSpawnInfo = new MobSpawnInfo.Builder().func_242571_a();
                 mobSpawnInfo.func_242575_a(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.field_200725_aD, 20, 4, 4));
                 biome = new Biome.Builder().func_205415_a(Biome.RainType.RAIN).func_205419_a(Biome.Category.NONE).func_205421_a(0.1f).func_205420_b(0.2f).func_205414_c(0.5f).func_205417_d(0.5f).func_235097_a_(effects).func_242458_a(mobSpawnInfo.func_242577_b()).func_242457_a(biomeGenerationSettings.func_242508_a()).func_242455_a();
