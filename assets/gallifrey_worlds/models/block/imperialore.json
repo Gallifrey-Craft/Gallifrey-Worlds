@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "gallifrey_worlds:blocks/ore1",
+    "up": "gallifrey_worlds:blocks/ore1",
+    "north": "gallifrey_worlds:blocks/ore1",
+    "east": "gallifrey_worlds:blocks/ore1",
+    "south": "gallifrey_worlds:blocks/ore1",
+    "west": "gallifrey_worlds:blocks/ore1",
+    "particle": "gallifrey_worlds:blocks/ore1"
+  }
+}

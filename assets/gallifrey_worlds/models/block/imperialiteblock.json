@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "gallifrey_worlds:blocks/imperialite_ingot",
+    "up": "gallifrey_worlds:blocks/imperialite_ingot",
+    "north": "gallifrey_worlds:blocks/ore1",
+    "east": "gallifrey_worlds:blocks/imperialite_ingot",
+    "south": "gallifrey_worlds:blocks/imperialite_ingot",
+    "west": "gallifrey_worlds:blocks/imperialite_ingot",
+    "particle": "gallifrey_worlds:blocks/imperialite_ingot"
+  }
+}
