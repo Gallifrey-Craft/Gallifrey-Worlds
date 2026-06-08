@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "2": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "3": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "4": {
+      "item": "minecraft:diamond"
+    },
+    "5": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "6": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "7": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "8": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    }
+  },
+  "result": {
+    "item": "gallifrey_worlds:imperialite_chestplate",
+    "count": 1
+  }
+}

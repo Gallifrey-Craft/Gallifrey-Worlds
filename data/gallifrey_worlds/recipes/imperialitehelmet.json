@@ -1,0 +1,29 @@
+{
+  "group": "imperialgear",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "1": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "2": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "3": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "5": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    }
+  },
+  "result": {
+    "item": "gallifrey_worlds:imperialite_helmet",
+    "count": 1
+  }
+}

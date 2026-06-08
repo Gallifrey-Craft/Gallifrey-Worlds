@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:campfire"
+    },
+    "title": {
+      "translate": "advancements.deathtime.title"
+    },
+    "description": {
+      "translate": "advancements.deathtime.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "deathtime": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "gallifrey_worlds:mustafar"
+      }
+    }
+  },
+  "parent": "gallifrey_worlds:gallifreycraft"
+}

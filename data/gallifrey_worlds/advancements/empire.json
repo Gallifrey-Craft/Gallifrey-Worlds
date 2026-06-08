@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:snowball"
+    },
+    "title": {
+      "translate": "advancements.empire.title"
+    },
+    "description": {
+      "translate": "advancements.empire.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "empire": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "gallifrey_worlds:hoth"
+      }
+    }
+  },
+  "parent": "gallifrey_worlds:gallifreycraft"
+}

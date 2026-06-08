@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "gallifrey_worlds:imperialite"
+    },
+    "title": {
+      "translate": "advancements.homeoftheworlds.title"
+    },
+    "description": {
+      "translate": "advancements.homeoftheworlds.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "homeoftheworlds": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "gallifrey_worlds:lothal"
+      }
+    }
+  },
+  "parent": "gallifrey_worlds:gallifreycraft"
+}

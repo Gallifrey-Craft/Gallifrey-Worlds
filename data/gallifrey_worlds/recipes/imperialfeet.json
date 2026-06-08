@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "2": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "3": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "5": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    }
+  },
+  "result": {
+    "item": "gallifrey_worlds:imperialite_boots",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "1": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "2": {
+      "item": "gallifrey_worlds:imperialiteingot"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "gallifrey_worlds:imperialitetools_pickaxe",
+    "count": 1
+  }
+}

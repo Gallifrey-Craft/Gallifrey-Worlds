@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:dark_oak_sapling"
+    },
+    "title": {
+      "translate": "advancements.to_many_trees.title"
+    },
+    "description": {
+      "translate": "advancements.to_many_trees.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "to_many_trees": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "gallifrey_worlds:kashyyyk"
+      }
+    }
+  },
+  "parent": "gallifrey_worlds:gallifreycraft"
+}

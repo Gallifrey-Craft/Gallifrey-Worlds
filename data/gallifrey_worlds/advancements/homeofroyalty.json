@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:bamboo"
+    },
+    "title": {
+      "translate": "advancements.homeofroyalty.title"
+    },
+    "description": {
+      "translate": "advancements.homeofroyalty.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "homeofroyalty": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "gallifrey_worlds:naboo"
+      }
+    }
+  },
+  "parent": "gallifrey_worlds:gallifreycraft"
+}

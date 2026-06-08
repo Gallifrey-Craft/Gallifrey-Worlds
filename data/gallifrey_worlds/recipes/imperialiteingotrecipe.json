@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "gallifrey_worlds:imperialite"
+    },
+    "1": {
+      "item": "gallifrey_worlds:imperialite"
+    },
+    "2": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "3": {
+      "item": "gallifrey_worlds:imperialite"
+    },
+    "4": {
+      "item": "minecraft:netherite_block"
+    },
+    "5": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "6": {
+      "item": "gallifrey_worlds:imperialite"
+    },
+    "7": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "8": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "gallifrey_worlds:imperialiteingot",
+    "count": 1
+  }
+}

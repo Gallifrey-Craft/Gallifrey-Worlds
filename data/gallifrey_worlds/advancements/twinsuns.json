@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:sand"
+    },
+    "title": {
+      "translate": "advancements.twinsuns.title"
+    },
+    "description": {
+      "translate": "advancements.twinsuns.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "twinsuns": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "gallifrey_worlds:tatooine"
+      }
+    }
+  },
+  "parent": "gallifrey_worlds:gallifreycraft"
+}

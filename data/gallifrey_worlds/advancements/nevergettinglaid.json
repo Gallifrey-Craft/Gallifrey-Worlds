@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:parrot_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.nevergettinglaid.title"
+    },
+    "description": {
+      "translate": "advancements.nevergettinglaid.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "nevergettinglaid": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "gallifrey_worlds:gallifreycraft"
+}
