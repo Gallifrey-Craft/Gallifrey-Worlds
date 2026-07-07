@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "gallifrey_worlds:items/imperialitetools_sword"
-  }
-}
